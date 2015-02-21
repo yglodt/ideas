@@ -24,24 +24,24 @@ public class Idea {
 	@GeneratedValue(generator = "uuid2")
 	@GenericGenerator(name = "uuid2", strategy = "uuid2")
 	@Column(name = "id", columnDefinition = "uuid")
-	private UUID id;
+	private UUID	id;
 
-	private String name;
+	private String	name;
 
 	@Column(length = 32768)
-	private String description;
+	private String	description;
 
-	private String userCreated;
+	private String	userCreated;
 
-	private Date dateCreated;
+	private Date	dateCreated;
 
 	@OneToOne
-	private Idea parent;
+	private Idea	parent;
 
 	public Idea() {
 	}
 
-	public Idea(UUID id) {
+	public Idea(final UUID id) {
 		this.id = id;
 	}
 
@@ -49,7 +49,7 @@ public class Idea {
 		return id;
 	}
 
-	public void setId(UUID id) {
+	public void setId(final UUID id) {
 		this.id = id;
 	}
 
@@ -57,7 +57,7 @@ public class Idea {
 		return name;
 	}
 
-	public void setName(String name) {
+	public void setName(final String name) {
 		this.name = name;
 	}
 
@@ -65,7 +65,7 @@ public class Idea {
 		return description;
 	}
 
-	public void setDescription(String description) {
+	public void setDescription(final String description) {
 		this.description = description;
 	}
 
@@ -73,7 +73,7 @@ public class Idea {
 		return userCreated;
 	}
 
-	public void setUserCreated(String userCreated) {
+	public void setUserCreated(final String userCreated) {
 		this.userCreated = userCreated;
 	}
 
@@ -81,7 +81,7 @@ public class Idea {
 		return dateCreated;
 	}
 
-	public void setDateCreated(Date dateCreated) {
+	public void setDateCreated(final Date dateCreated) {
 		this.dateCreated = dateCreated;
 	}
 
@@ -89,7 +89,7 @@ public class Idea {
 		return parent;
 	}
 
-	public void setParent(Idea parent) {
+	public void setParent(final Idea parent) {
 		this.parent = parent;
 	}
 

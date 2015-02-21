@@ -32,13 +32,13 @@ import com.example.ideas.domain.Vote;
 @EnableAutoConfiguration
 public class WebController {
 
-	final static Logger logger = LoggerFactory.getLogger(WebController.class);
+	final static Logger	logger	= LoggerFactory.getLogger(WebController.class);
 
 	@Autowired
-	private IdeaDao ideaDao;
+	private IdeaDao		ideaDao;
 
 	@Autowired
-	private VoteDao voteDao;
+	private VoteDao		voteDao;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String getIndex(final Model model) {
@@ -47,24 +47,22 @@ public class WebController {
 	}
 
 	@RequestMapping(value = "/idea/{id}", method = RequestMethod.GET)
-	public String getIdea(final Model model, @PathVariable("id") UUID id) {
+	public String getIdea(final Model model, @PathVariable("id") final UUID id) {
 
-		Idea idea = ideaDao.findOne(id);
+		final Idea idea = ideaDao.findOne(id);
 
-		Idea comment = new Idea();
+		final Idea comment = new Idea();
 		comment.setParent(idea);
 
 		model.addAttribute("idea", idea);
 		model.addAttribute("comment", comment);
-
-		// ideaDao.findByName("abc");
 
 		model.addAttribute("comments", ideaDao.findByParent(idea));
 		return "idea";
 	}
 
 	@RequestMapping(value = "/idea/edit", method = RequestMethod.GET)
-	public String getEditIdea(Model model,
+	public String getEditIdea(final Model model,
 			@RequestParam(value = "id", required = false) final UUID id) {
 
 		if (id == null) {
@@ -101,7 +99,7 @@ public class WebController {
 	@RequestMapping(value = "/vote", method = RequestMethod.POST)
 	public boolean postVote(@RequestParam(value = "id") final String ideaId) {
 
-		Vote vote = new Vote();
+		final Vote vote = new Vote();
 		vote.setDateCreated(new Date());
 		vote.setIdea(new Idea(UUID.fromString(ideaId)));
 		voteDao.save(vote);

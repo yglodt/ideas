@@ -11,10 +11,10 @@ public interface IdeaDao extends CrudRepository<Idea, UUID> {
 
 	// http://docs.spring.io/spring-data/data-jpa/docs/current/reference/html/#jpa.query-methods.query-creation
 
-	//@Query("select * from Idea where parent.id = :parent")
-	//public List<Idea> findAllByParent(@Param("parent") UUID idea);
+	// @Query("select * from Idea where parent.id = :parent")
+	// public List<Idea> findAllByParent(@Param("parent") UUID idea);
 	public List<Idea> findByParent(Idea idea);
 
-	//public Idea findByName(String name);
+	// public Idea findByName(String name);
 
 }

@@ -24,20 +24,20 @@ public class Vote {
 	@GeneratedValue(generator = "uuid2")
 	@GenericGenerator(name = "uuid2", strategy = "uuid2")
 	@Column(name = "id", columnDefinition = "uuid")
-	private UUID id;
+	private UUID	id;
 
-	private String userCreated;
+	private String	userCreated;
 
-	private Date dateCreated;
+	private Date	dateCreated;
 
 	@OneToOne
-	private Idea idea;
+	private Idea	idea;
 
 	public UUID getId() {
 		return id;
 	}
 
-	public void setId(UUID id) {
+	public void setId(final UUID id) {
 		this.id = id;
 	}
 
@@ -45,7 +45,7 @@ public class Vote {
 		return userCreated;
 	}
 
-	public void setUserCreated(String userCreated) {
+	public void setUserCreated(final String userCreated) {
 		this.userCreated = userCreated;
 	}
 
@@ -53,7 +53,7 @@ public class Vote {
 		return dateCreated;
 	}
 
-	public void setDateCreated(Date dateCreated) {
+	public void setDateCreated(final Date dateCreated) {
 		this.dateCreated = dateCreated;
 	}
 
@@ -61,7 +61,7 @@ public class Vote {
 		return idea;
 	}
 
-	public void setIdea(Idea idea) {
+	public void setIdea(final Idea idea) {
 		this.idea = idea;
 	}
 

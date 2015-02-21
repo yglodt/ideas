@@ -17,7 +17,7 @@ import org.springframework.web.servlet.support.RequestDataValueProcessor;
 @EnableWebSecurity
 public class ConfigWebSecurity extends WebSecurityConfigurerAdapter {
 
-	//@Autowired
+	// @Autowired
 	// AuthSuccessHandler authSuccessHandler;
 	@Configuration
 	protected static class AuthenticationConfiguration extends GlobalAuthenticationConfigurerAdapter {
