@@ -1,19 +1,6 @@
 <%@ include file="/WEB-INF/views/_header.jsp"%>
 
-<%--
-<ul class="breadcrumb">
-	<li><a href="<c:url value='/' />"><spring:message code="home" /></a></li>
-	<li class="active"><spring:message code="${messageCode}" /></li>
-</ul>
---%>
-
-<div class="row">
-	<div class="col-xs-12">
-		<h3>Hello</h3>
-	</div>
-</div>
-
-<table class="table">
+<table class="table table-striped table-hover">
 	<thead>
 		<tr>
 			<th>Date</th>
@@ -30,9 +17,9 @@
 				<td><fmt:formatDate pattern="dd.MM.yyyy HH:mm" value="${idea.dateCreated}" /></td>
 				<td>${idea.userCreated}</td>
 				<td>${idea.name}</td>
-				<td>${idea.description}</td>
-				<td><button class="btn btn-success btn-block vote" data-id="${idea.id}">Vote</button></td>
-				<td><a href="<c:url value='/idea/' />${idea.id}">Edit</a></td>
+				<td>${fn:substring(idea.description,0,300)}&hellip;</td>
+				<td><a href="<c:url value='/idea/' />${idea.id}">View</a></td>
+				<td><button class="btn btn-success btn-block vote" data-id="${idea.id}">Vote (${fn:length(idea.votes)})</button></td>
 			</tr>
 		</c:forEach>
 	</tbody>

@@ -1,12 +1,16 @@
 package name.glodt.yves.ideas.domain;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -24,19 +28,22 @@ public class Idea {
 	@GeneratedValue(generator = "uuid2")
 	@GenericGenerator(name = "uuid2", strategy = "uuid2")
 	@Column(name = "id", columnDefinition = "uuid")
-	private UUID	id;
+	private UUID		id;
 
-	private String	name;
+	private String		name;
 
 	@Column(length = 32768)
-	private String	description;
+	private String		description;
 
-	private String	userCreated;
+	private String		userCreated;
 
-	private Date	dateCreated;
+	private Date		dateCreated;
 
 	@OneToOne
-	private Idea	parent;
+	private Idea		parent;
+
+	@OneToMany(mappedBy = "idea", fetch = FetchType.EAGER)
+	private List<Vote>	votes	= new ArrayList<Vote>();
 
 	public Idea() {
 	}
@@ -91,6 +98,14 @@ public class Idea {
 
 	public void setParent(final Idea parent) {
 		this.parent = parent;
+	}
+
+	public List<Vote> getVotes() {
+		return votes;
+	}
+
+	public void setVotes(final List<Vote> votes) {
+		this.votes = votes;
 	}
 
 }
