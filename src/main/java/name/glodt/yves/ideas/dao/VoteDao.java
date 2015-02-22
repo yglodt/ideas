@@ -1,10 +1,10 @@
-package com.example.ideas.dao;
+package name.glodt.yves.ideas.dao;
 
 import java.util.UUID;
 
-import org.springframework.data.repository.CrudRepository;
+import name.glodt.yves.ideas.domain.Vote;
 
-import com.example.ideas.domain.Vote;
+import org.springframework.data.repository.CrudRepository;
 
 public interface VoteDao extends CrudRepository<Vote, UUID> {
 

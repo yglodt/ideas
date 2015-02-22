@@ -1,10 +1,15 @@
-package com.example.ideas.web;
+package name.glodt.yves.ideas.web;
 
 import java.beans.PropertyEditorSupport;
 import java.util.Date;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+
+import name.glodt.yves.ideas.dao.IdeaDao;
+import name.glodt.yves.ideas.dao.VoteDao;
+import name.glodt.yves.ideas.domain.Idea;
+import name.glodt.yves.ideas.domain.Vote;
 
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
@@ -22,11 +27,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.example.ideas.dao.IdeaDao;
-import com.example.ideas.dao.VoteDao;
-import com.example.ideas.domain.Idea;
-import com.example.ideas.domain.Vote;
 
 @Controller
 @EnableAutoConfiguration

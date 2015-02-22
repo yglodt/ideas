@@ -1,4 +1,4 @@
-package com.example.ideas.domain;
+package name.glodt.yves.ideas.domain;
 
 import java.util.Date;
 import java.util.UUID;
@@ -15,8 +15,8 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
 @Entity
-@Table(name = "ideas")
-public class Idea {
+@Table(name = "votes")
+public class Vote {
 
 	@Id
 	@NotNull
@@ -26,24 +26,12 @@ public class Idea {
 	@Column(name = "id", columnDefinition = "uuid")
 	private UUID	id;
 
-	private String	name;
-
-	@Column(length = 32768)
-	private String	description;
-
 	private String	userCreated;
 
 	private Date	dateCreated;
 
 	@OneToOne
-	private Idea	parent;
-
-	public Idea() {
-	}
-
-	public Idea(final UUID id) {
-		this.id = id;
-	}
+	private Idea	idea;
 
 	public UUID getId() {
 		return id;
@@ -51,22 +39,6 @@ public class Idea {
 
 	public void setId(final UUID id) {
 		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(final String name) {
-		this.name = name;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(final String description) {
-		this.description = description;
 	}
 
 	public String getUserCreated() {
@@ -85,12 +57,12 @@ public class Idea {
 		this.dateCreated = dateCreated;
 	}
 
-	public Idea getParent() {
-		return parent;
+	public Idea getIdea() {
+		return idea;
 	}
 
-	public void setParent(final Idea parent) {
-		this.parent = parent;
+	public void setIdea(final Idea idea) {
+		this.idea = idea;
 	}
 
 }

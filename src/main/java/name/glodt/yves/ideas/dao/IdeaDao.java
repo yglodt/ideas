@@ -1,12 +1,12 @@
-package com.example.ideas.dao;
+package name.glodt.yves.ideas.dao;
 
 import java.util.List;
 import java.util.UUID;
 
+import name.glodt.yves.ideas.domain.Idea;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-
-import com.example.ideas.domain.Idea;
 
 public interface IdeaDao extends CrudRepository<Idea, UUID> {
 
