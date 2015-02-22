@@ -32,18 +32,18 @@
 </head>
 <body>
 
-
 	<nav class="navbar navbar-default navbar-fixed-top hidden-print" role="navigation">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 				<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="<c:url value='/' />">Ideas</a>
+			<a class="navbar-brand" href="<c:url value='/' />">All Ideas</a>
 		</div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav" id="shNav">
+				<li><a href="<c:url value='/ideas/highesvotes' />">Most wanted Ideas</a></li>
 				<li><a href="<c:url value='/idea/edit' />">Post new Idea</a></li>
 			</ul>
 		</div>
 	</nav>
-	<div class="container">
+	<div class="container-fluid">

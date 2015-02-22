@@ -41,8 +41,14 @@ public class WebController {
 	private VoteDao		voteDao;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String getIndex(final Model model) {
+	public String getIdeas(final Model model) {
 		model.addAttribute("ideas", ideaDao.findAllOrderByDateCreatedDesc());
+		return "index";
+	}
+
+	@RequestMapping(value = "/ideas/highesvotes", method = RequestMethod.GET)
+	public String getIdeasMostWanted(final Model model) {
+		model.addAttribute("ideas", ideaDao.findAllOrderByNumberOfVotes());
 		return "index";
 	}
 

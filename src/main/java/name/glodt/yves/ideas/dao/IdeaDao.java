@@ -15,10 +15,9 @@ public interface IdeaDao extends CrudRepository<Idea, UUID> {
 	@Query("from Idea where parent is null order by dateCreated desc")
 	public List<Idea> findAllOrderByDateCreatedDesc();
 
-	// @Query("select * from Idea where parent.id = :parent")
-	// public List<Idea> findAllByParent(@Param("parent") UUID idea);
-	public List<Idea> findByParentOrderByDateCreatedDesc(Idea idea);
+	@Query("select p from Idea p left join p.votes as pc group by p order by count(pc) desc")
+	public List<Idea> findAllOrderByNumberOfVotes();
 
-	// public Idea findByName(String name);
+	public List<Idea> findByParentOrderByDateCreatedDesc(Idea idea);
 
 }
