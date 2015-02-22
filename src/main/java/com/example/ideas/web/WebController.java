@@ -42,7 +42,7 @@ public class WebController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String getIndex(final Model model) {
-		model.addAttribute("ideas", ideaDao.findAll());
+		model.addAttribute("ideas", ideaDao.findAllOrderByDateCreatedDesc());
 		return "index";
 	}
 
@@ -57,7 +57,7 @@ public class WebController {
 		model.addAttribute("idea", idea);
 		model.addAttribute("comment", comment);
 
-		model.addAttribute("comments", ideaDao.findByParent(idea));
+		model.addAttribute("comments", ideaDao.findByParentOrderByDateCreatedDesc(idea));
 		return "idea";
 	}
 

@@ -27,7 +27,7 @@
 	<tbody>
 		<c:forEach items="${ideas}" var="idea" varStatus="status">
 			<tr>
-				<td><fmt:formatDate pattern="dd.MM.yyyy" value="${idea.dateCreated}" /></td>
+				<td><fmt:formatDate pattern="dd.MM.yyyy HH:mm" value="${idea.dateCreated}" /></td>
 				<td>${idea.userCreated}</td>
 				<td>${idea.name}</td>
 				<td>${idea.description}</td>
@@ -49,7 +49,7 @@
 				"id" : id,
 				"${_csrf.parameterName}" : "${_csrf.token}"
 			}, function(r) {
-				alert(r);
+				//alert(r);
 			}, "json");
 
 			return false;
