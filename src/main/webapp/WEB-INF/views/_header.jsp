@@ -23,8 +23,10 @@
 	<c:otherwise>
 		<link href="${pageContext.request.contextPath}/resources/css/bootstrap.css" rel="stylesheet">
 		<link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">
+		<link href="${pageContext.request.contextPath}/resources/css/bootstrap3-wysihtml5.css" rel="stylesheet">
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bootstrap.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bootstrap3-wysihtml5.all.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.validate.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/script.js"></script>
 	</c:otherwise>

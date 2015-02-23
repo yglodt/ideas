@@ -44,4 +44,12 @@
 
 </form:form>
 
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#description").wysihtml5();
+	});
+</script>
+
+
 <%@ include file="/WEB-INF/views/_footer.jsp"%>
