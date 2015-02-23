@@ -7,20 +7,17 @@
 </ul>
 --%>
 
-<div class="row">
-	<div class="col-xs-12">
-		<h3>Detail</h3>
-	</div>
-</div>
+<blockquote>
+	<p>${idea.name}</p>
+	<footer>
+		Idea posted by ${idea.userCreated} on
+		<fmt:formatDate pattern="dd.MM.yyyy - HH:mm" value="${idea.dateCreated}" />
+	</footer>
+</blockquote>
 
-<td><fmt:formatDate pattern="dd.MM.yyyy" value="${idea.dateCreated}" /></td>
-<td>${idea.userCreated}</td>
-<td>${idea.name}</td>
-<td>${idea.description}</td>
+<div id="ideaContent">${idea.description}</div>
 
-<hr />
-
-<h1>Comments</h1>
+<h3>Comments</h3>
 
 <table class="table">
 	<thead>
