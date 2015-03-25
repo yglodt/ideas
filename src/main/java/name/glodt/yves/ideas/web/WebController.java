@@ -97,7 +97,7 @@ public class WebController {
 			idea.setDateCreated(new Date());
 			ideaDao.save(idea);
 
-			return "redirect:/";
+			return "redirect:/idea/" + idea.getParent().getId();
 		}
 	}
 
