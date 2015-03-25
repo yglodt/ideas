@@ -71,6 +71,7 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
+		$("#description").wysihtml5();
 	});
 </script>
 
